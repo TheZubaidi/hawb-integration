@@ -1,0 +1,49 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect to a HAWB PC",
+        "description": "In HAWB's settings, open Connection and turn on \"Home Assistant integration\". Normally Home Assistant finds the PC by itself; use this form only if it did not.",
+        "data": { "host": "PC address", "port": "Port" }
+      },
+      "pair": {
+        "title": "Pair with {name}",
+        "description": "In HAWB's settings on that PC, open Connection → Home Assistant integration and press \"Show pairing code\". Type the six digits here.",
+        "data": { "code": "Pairing code" }
+      },
+      "reauth_confirm": {
+        "title": "Pair again with {name}",
+        "description": "This PC no longer accepts Home Assistant (the pairing was removed). Press \"Show pairing code\" in HAWB's settings and type the code here.",
+        "data": { "code": "Pairing code" }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach HAWB on that PC. Check that HAWB is running, the integration is turned on and the firewall allows it.",
+      "invalid_code": "That code is wrong or has expired. Show a new code in HAWB and try again."
+    },
+    "abort": {
+      "already_configured": "This PC is already set up",
+      "not_hawb": "That is not a HAWB agent",
+      "wrong_device": "That is a different PC",
+      "reauth_successful": "Paired again"
+    }
+  },
+  "services": {
+    "send_rich_notification": {
+      "name": "Send rich notification",
+      "description": "Shows a Windows notification with an optional image, icon, buttons and reply box.",
+      "fields": {
+        "message": { "name": "Message", "description": "Body text." },
+        "title": { "name": "Title", "description": "Heading of the notification." },
+        "image": { "name": "Image", "description": "URL of a large picture." },
+        "icon": { "name": "Icon", "description": "URL of a small logo." },
+        "tag": { "name": "Tag", "description": "Sending another notification with the same tag replaces the first." },
+        "silent": { "name": "Silent", "description": "Do not play a sound." },
+        "reply": { "name": "Reply box", "description": "Show a reply box (true, or the placeholder text)." },
+        "actions": { "name": "Buttons", "description": "Up to five buttons, each with an action id and a title. Presses arrive on the PC's Notification action event entity." },
+        "clear": { "name": "Clear", "description": "Remove the notification with this tag instead of showing one." }
+      }
+    }
+  }
+}

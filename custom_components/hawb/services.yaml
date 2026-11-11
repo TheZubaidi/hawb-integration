@@ -1,0 +1,34 @@
+send_rich_notification:
+  target:
+    entity:
+      integration: hawb
+      domain: notify
+  fields:
+    message:
+      selector:
+        text:
+          multiline: true
+    title:
+      selector:
+        text:
+    image:
+      selector:
+        text:
+    icon:
+      selector:
+        text:
+    tag:
+      selector:
+        text:
+    silent:
+      selector:
+        boolean:
+    reply:
+      selector:
+        text:
+    actions:
+      selector:
+        object:
+    clear:
+      selector:
+        boolean:

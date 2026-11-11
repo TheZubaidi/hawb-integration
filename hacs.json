@@ -1,0 +1,5 @@
+{
+  "name": "Home Assistant Windows Buddy (HAWB)",
+  "render_readme": true,
+  "homeassistant": "2024.10.0"
+}

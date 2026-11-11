@@ -1,0 +1,13 @@
+{
+  "domain": "hawb",
+  "name": "Home Assistant Windows Buddy (HAWB)",
+  "codeowners": ["@TheZubaidi"],
+  "config_flow": true,
+  "documentation": "https://github.com/TheZubaidi/hawb-integration",
+  "issue_tracker": "https://github.com/TheZubaidi/hawb-integration/issues",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "0.1.0",
+  "zeroconf": ["_hawb._tcp.local."]
+}
